@@ -1,0 +1,29 @@
+@model CottageApp.Models.CottageItem
+
+<div class="col">
+    <div class="card h-100">
+        <img src="@Model.PictureUrl" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a asp-controller="CottageItems" asp-action="Details" asp-route-id="@Model.Id">
+                    @Model.Title
+                </a>
+                <a asp-controller="CottageItems" asp-action="Edit" asp-route-id="@Model.Id">
+                    <span class="oi oi-pencil" title="pencil" aria-hidden="true"></span>
+                </a>
+                <a asp-controller="CottageItems" asp-action="Delete" asp-route-id="@Model.Id">
+                    <span class="oi oi-x" title="x" aria-hidden="true"></span>
+                </a>
+            </h5>
+            <p class="card-text">@Model.Description</p>
+        </div>
+        <div class="card-footer user-select-none">
+            @Model.DateAdded.ToString("MMM yyyy")
+            <div class="float-end">
+                @* <span class="vote" data-id="@Model.Id" data-direction="true" style="cursor: pointer">👍</span>
+                <span class="voteCount" id="item_@Model.Id">@Model.Votes</span>
+                <span class="vote" data-id="@Model.Id" data-direction="false" style="cursor: pointer">👎</span> *@
+            </div>
+        </div>
+    </div>
+</div>

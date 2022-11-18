@@ -1,0 +1,16 @@
+﻿@model IEnumerable<CottageApp.Models.CottageItem>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-3">
+    @foreach (var item in Model)
+    {
+        <partial name="_CottageCard" model="item"/>
+    }
+</div>
